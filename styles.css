@@ -1,0 +1,264 @@
+:root {
+  --bg: #fff7f7;
+  --card: #ffffff;
+  --text: #2d2225;
+  --muted: #6a575d;
+  --border: #e9cfd5;
+  --primary: #d85e73;
+  --secondary: #f3e1e5;
+  --focus: #cf7485;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  width: min(100%, 460px);
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(14px, env(safe-area-inset-bottom));
+  display: grid;
+  align-items: center;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(14px, 4vw, 18px);
+}
+
+.chip {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff1f4;
+  color: #7f4f5b;
+  font-size: 0.8rem;
+}
+
+.title {
+  margin: 0 0 10px;
+  line-height: 1.2;
+  font-size: clamp(1.45rem, 6vw, 1.95rem);
+}
+
+.message {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: clamp(0.98rem, 3.6vw, 1.05rem);
+  max-width: 38ch;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
+  min-height: 44px;
+  border: 1px solid #c58793;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: #4f3b41;
+}
+
+.btn:focus-visible,
+.heart-target:focus-visible,
+.memory-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.photo-frame {
+  margin: 14px 0 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+  background: #fffafb;
+}
+
+.photo {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f4e8eb;
+}
+
+figcaption {
+  margin-top: 6px;
+  color: #70565d;
+  font-size: 0.85rem;
+}
+
+.photo-collage {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.collage-item:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.photo-fallback {
+  border: 1px dashed #c79aa5;
+  border-radius: 8px;
+  min-height: 170px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: #795962;
+  background: #fdf4f6;
+  padding: 8px;
+}
+
+.game-status {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 700;
+  color: #6f4f57;
+}
+
+.heart-arena {
+  position: relative;
+  min-height: 240px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.heart-target {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 58px;
+  height: 58px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #c58793;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #f4dde2;
+  color: #694e55;
+}
+
+.game-note {
+  margin: 12px 0 0;
+  color: #70565d;
+}
+
+.memory-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.memory-card {
+  min-height: 68px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fbf4f6;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  font-size: 1.25rem;
+}
+
+.card-face--front {
+  display: none;
+}
+
+.memory-card.flipped .card-face--front {
+  display: grid;
+}
+
+.memory-card.flipped .card-face--back {
+  display: none;
+}
+
+.memory-card.matched {
+  background: #f2e1e6;
+}
+
+.letter {
+  margin-top: 14px;
+}
+
+.letter p {
+  margin: 0 0 8px;
+  color: #594247;
+}
+
+.signature {
+  margin: 8px 0 0;
+  font-weight: 700;
+  color: #7a4f5a;
+}
+
+@media (min-width: 640px) {
+  .app-shell {
+    width: min(100%, 760px);
+    padding: 20px;
+  }
+
+  .card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
