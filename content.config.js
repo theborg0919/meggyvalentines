@@ -15,7 +15,7 @@ export const content = {
     welcome: {
       chipPrefix: "for",
       message:
-        "a little mini game i made for my meggy, click through heheheh",
+        "a little mini game i made for my meggy, click start!! heheheh",
       startButton: "start",
     },
     scene: {
