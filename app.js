@@ -530,9 +530,7 @@ function renderFinal() {
       <p class="chip">${escapeHtml(text.final.chip)}</p>
       <h2 class="title">${escapeHtml(content.finalLetter.title)}</h2>
       <div class="letter">
-        ${content.finalLetter.message
-          .map((line) => `<p>${line ? escapeHtml(line) : "&nbsp;"}</p>`)
-          .join("")}
+        ${formatLetterMessage(content.finalLetter.message)}
       </div>
       <p class="signature">${escapeHtml(text.final.signaturePrefix)} ${escapeHtml(content.appMeta.senderName)}</p>
       <div class="actions">
@@ -544,6 +542,24 @@ function renderFinal() {
     resetForReplay(false);
     render();
   });
+}
+
+function formatLetterMessage(message) {
+  if (Array.isArray(message)) {
+    return message
+      .map((line) => `<p>${line ? escapeHtml(line) : "&nbsp;"}</p>`)
+      .join("");
+  }
+
+  const raw = String(message ?? "").trim();
+  if (!raw) return "";
+
+  return raw
+    .split(/\r?\n\s*\r?\n/g)
+    .map((paragraph) => paragraph.replace(/\r?\n+/g, " ").trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
 }
 
 function normalizePhotoIndex(index) {

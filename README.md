@@ -28,6 +28,10 @@ Edit `content.config.js`:
 - `finalLetter.title` and `finalLetter.message`
 - `captions`
 
+`finalLetter.message` accepts either:
+- A single string (recommended): use one text block, and separate paragraphs with a blank line.
+- An array of lines (legacy format).
+
 ## Photo Naming Rules (Required)
 1. Put all photos in `assets/photos/`.
 2. Use names `photo-01` through `photo-12` with zero-padding.

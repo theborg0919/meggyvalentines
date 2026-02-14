@@ -115,14 +115,19 @@ export const content = {
   },
   finalLetter: {
     title: "HAPPY VALENTINES DAY!!!",
-    message: [
-      "i love you so much my meggy, you are the best girlfriend (and wife) ever",
-      "i love every moment i have spent with you, every moment i am spending with you, and every moment i WILL spend with you",
-      "thank you my dearest, for being in my life and for being you!!",
-      "",
-      "sincerely and love,",
-      "your boyfriend hyunny",
-    ],
+    message: `my dearest meggy, happy valentines day to my favorite person ever!!!
+every day with you is my favorite day and i still get so happy just seeing your face hehehe
+you are so pretty, so lovely, so funny, and genuinely the best girlfriend (and wife) in the universe
+
+thank you for loving me, being patient with me, and always being there for me
+i love our little moments and our great moments and even the random silly moments where we just laugh at nothing
+i love you now, i loved you before, and i will love you forever and ever and ever
+
+i am so lucky to have my meggy
+you are my home, my peace, and my favorite everything
+
+sincerely and with all my love,
+your hyunny`,
   },
   photos: [
     "photo-01.jpg",
